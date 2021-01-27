@@ -22,6 +22,8 @@
   display: flex;
   justify-content: space-between;
   margin-right: 50px;
+  position: relative;
+  z-index: 10;
 }
 
 .nav_list {
@@ -36,6 +38,10 @@
 }
 .nav_list > li {
   cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+.nav_list > li:hover {
+  color: #e1bf35;
 }
 .nav_right > div {
   display: flex;
@@ -54,4 +60,17 @@
   border: none;
   cursor: pointer;
   outline: none;
+}
+.test {
+  width: 50vw;
+  height: 100vh;
+  background-color: rgb(14, 13, 13);
+  position: fixed;
+  top: 0px;
+  right: -50vw;
+  transition: all 0.7s ease-in-out;
+}
+
+#test:checked ~ .test {
+  right: 0;
 }

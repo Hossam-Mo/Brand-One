@@ -4,6 +4,15 @@ import "./nav.css";
 export default function Nav() {
   return (
     <div className="nav">
+      <input
+        style={{ position: "absolute", top: 20, left: 20 }}
+        type="checkbox"
+        id="test"
+      ></input>
+      <label style={{ position: "absolute", top: 20, left: 20 }} htmlFor="test">
+        click
+      </label>
+      <div className="test"></div>
       <div className="nav_logo">
         <span>Brand</span>
         <span>O</span>
