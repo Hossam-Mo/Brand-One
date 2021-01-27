@@ -5,3 +5,45 @@
   background-repeat: no-repeat;
   background-size: 100vw 100vh;
 }
+.page_mid {
+  margin-top: 25vh;
+  margin-left: 70px;
+  width: 400px;
+  color: white;
+  font-family: "Fraunces";
+  cursor: default;
+}
+.page_mid > h2 {
+  font-size: 35px;
+  margin-bottom: 20px;
+}
+.page_mid > div {
+  width: 300px;
+}
+.page_mid > div > h3 {
+  font-size: 25px;
+}
+.page > button {
+  margin-left: 70px;
+  width: 250px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid white;
+  outline: none;
+  padding: 20px 0;
+  margin-top: 70px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+.page_discover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: white;
+  font-family: "Lobster Two";
+  font-size: 22px;
+}
+.page_discover > div > span:nth-child(1) {
+  color: #e1bf35;
+}

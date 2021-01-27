@@ -8,12 +8,14 @@
   font-size: 40px;
   color: white;
   font-family: "Lobster Two";
-  margin-left: 35px;
+  margin-left: 50px;
   cursor: default;
 }
 .nav_logo > span:nth-child(2) {
   color: #e1bf35;
   margin-left: 10px;
+  text-shadow: 2px 2px 0px #232323, 3px 2px 0px #e1bf35;
+  margin-right: 3px;
 }
 .nav_right {
   width: 35%;
@@ -26,10 +28,11 @@
   list-style: none;
   display: flex;
   color: white;
-  font-family: "Lobster Two";
+  font-family: "Fraunces";
   justify-content: space-between;
   width: 60%;
-  font-size: 20px;
+  font-size: 17px;
+  font-weight: 700;
 }
 .nav_list > li {
   cursor: pointer;
