@@ -22,7 +22,8 @@
   display: flex;
   justify-content: space-between;
   margin-right: 50px;
-  position: relative;
+}
+.nav_right > .right_icons {
   z-index: 10;
 }
 
@@ -35,13 +36,21 @@
   width: 60%;
   font-size: 17px;
   font-weight: 700;
+  position: relative;
 }
-.nav_list > li {
+.nav_list > label {
   cursor: pointer;
   transition: all 0.2s ease-in-out;
+  z-index: 10;
 }
-.nav_list > li:hover {
+.nav_list > label:hover {
   color: #e1bf35;
+}
+.list_checkbox {
+  position: "absolute";
+  top: 20;
+  left: 20;
+  display: none;
 }
 .nav_right > div {
   display: flex;
@@ -61,7 +70,7 @@
   cursor: pointer;
   outline: none;
 }
-.test {
+.right_slide {
   width: 50vw;
   height: 100vh;
   background-color: rgb(14, 13, 13);
@@ -70,7 +79,41 @@
   right: -50vw;
   transition: all 0.7s ease-in-out;
 }
-
-#test:checked ~ .test {
+.close {
+  position: absolute;
+  top: 50px;
+  left: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+.close:hover {
+  transition: all 0.2s ease-in-out;
+  transition-delay: 0s;
+}
+#man:checked ~ .right_slide {
   right: 0;
+}
+#man:checked + label {
+  color: #e1bf35;
+}
+#man:checked ~ .close {
+  opacity: 1;
+  pointer-events: all;
+  transition: all 0.7s ease-in-out;
+  transition-delay: 0.4s;
+}
+#woman:checked ~ .right_slide {
+  right: 0;
+}
+#woman:checked + label {
+  color: #e1bf35;
+}
+#woman:checked ~ .close {
+  opacity: 1;
+  pointer-events: all;
+  transition: all 0.7s ease-in-out;
+  transition-delay: 0.4s;
+}
+#close:checked ~ .right_slide {
+  right: -50vw;
 }

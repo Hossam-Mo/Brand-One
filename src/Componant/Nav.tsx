@@ -1,30 +1,46 @@
 import React from "react";
 import "./nav.css";
+import { AiOutlineCloseCircle } from "react-icons/ai";
 
 export default function Nav() {
   return (
     <div className="nav">
-      <input
-        style={{ position: "absolute", top: 20, left: 20 }}
-        type="checkbox"
-        id="test"
-      ></input>
-      <label style={{ position: "absolute", top: 20, left: 20 }} htmlFor="test">
-        click
-      </label>
-      <div className="test"></div>
       <div className="nav_logo">
         <span>Brand</span>
         <span>O</span>
         <span>ne </span>
       </div>
       <div className="nav_right">
-        <ul className="nav_list">
-          <li>Man</li>
-          <li>Woman</li>
-          <li>Explore</li>
-        </ul>
-        <div>
+        <div className="nav_list">
+          <input
+            className="list_checkbox"
+            type="radio"
+            id="man"
+            name="slid"
+          ></input>
+          <label htmlFor="man">Man</label>
+          <input
+            className="list_checkbox"
+            type="radio"
+            id="woman"
+            name="slid"
+          ></input>
+          <label htmlFor="woman">Woman</label>
+          <label>Explore</label>
+
+          <input
+            className="list_checkbox"
+            type="radio"
+            id="close"
+            name="slid"
+          ></input>
+          <label className="close" htmlFor="close">
+            <AiOutlineCloseCircle></AiOutlineCloseCircle>
+          </label>
+
+          <div className="right_slide"></div>
+        </div>
+        <div className="right_icons">
           <button>
             <svg
               width="20"
