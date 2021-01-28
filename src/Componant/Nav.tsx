@@ -1,8 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
 import "./nav.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
+interface sections {
+  name: string;
+  id: number;
+}
+
 export default function Nav() {
+  const [selecter, setSelecter] = useState<string>("");
+  const man: sections[] = [
+    { name: "Shirts", id: 1 },
+    { name: "Jeans", id: 2 },
+    { name: "Jackets ", id: 3 },
+    { name: "Boots ", id: 4 },
+  ];
+
+  const woman: sections[] = [
+    { name: "Shirts", id: 1 },
+    { name: "Jeans", id: 2 },
+    { name: "Jackets ", id: 3 },
+    { name: "Booots ", id: 4 },
+  ];
+
   return (
     <div className="nav">
       <div className="nav_logo">
@@ -13,6 +33,9 @@ export default function Nav() {
       <div className="nav_right">
         <div className="nav_list">
           <input
+            onClick={() => {
+              setSelecter("man");
+            }}
             className="list_checkbox"
             type="radio"
             id="man"
@@ -20,6 +43,9 @@ export default function Nav() {
           ></input>
           <label htmlFor="man">Man</label>
           <input
+            onClick={() => {
+              setSelecter("woman");
+            }}
             className="list_checkbox"
             type="radio"
             id="woman"
@@ -38,7 +64,15 @@ export default function Nav() {
             <AiOutlineCloseCircle></AiOutlineCloseCircle>
           </label>
 
-          <div className="right_slide"></div>
+          <div className="right_slide">
+            {selecter === "man"
+              ? man.map((it) => {
+                  return <p key={it.id}>{it.name}</p>;
+                })
+              : woman.map((it) => {
+                  return <p key={it.id}>{it.name}</p>;
+                })}
+          </div>
         </div>
         <div className="right_icons">
           <button>

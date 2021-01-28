@@ -78,11 +78,25 @@
   top: 0px;
   right: -50vw;
   transition: all 0.7s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.right_slide > p {
+  margin-top: 50px;
+  font-size: 25px;
+  font-family: "Fraunces";
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+.right_slide > p:hover {
+  color: #e1bf35;
 }
 .close {
   position: absolute;
   top: 50px;
-  left: 0;
+  left: 6px;
   opacity: 0;
   pointer-events: none;
 }
