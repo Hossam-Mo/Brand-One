@@ -12,7 +12,8 @@ interface props {
 
 export default function Nav({ border }: props) {
   const [selecter, setSelecter] = useState<string>("");
-  const nav = useRef<any>();
+  const [navColor, setNavColor] = useState<boolean>(false);
+
   const man: sections[] = [
     { name: "Shirts", id: 1 },
     { name: "Jeans", id: 2 },
@@ -28,11 +29,26 @@ export default function Nav({ border }: props) {
   ];
 
   useEffect(() => {
-    window.addEventListener("scroll", () => {});
+    const navScroll = () => {
+      if (window.scrollY > 100) {
+        setNavColor(true);
+      } else {
+        setNavColor(false);
+      }
+    };
+    window.addEventListener("scroll", navScroll);
+
+    return () => {
+      if (window) window.removeEventListener("scroll", navScroll);
+    };
   }, []);
 
   return (
-    <div ref={nav} className={!border ? "nav" : "nav nav_border"}>
+    <div
+      className={
+        !border ? "nav" : `nav nav_border ${navColor && "nav_scrollColor"} `
+      }
+    >
       <div className="nav_logo">
         <span>Brand</span>
         <span>O</span>
