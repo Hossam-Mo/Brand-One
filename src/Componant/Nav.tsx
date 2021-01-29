@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "./nav.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
 
@@ -6,9 +6,13 @@ interface sections {
   name: string;
   id: number;
 }
+interface props {
+  border: boolean;
+}
 
-export default function Nav() {
+export default function Nav({ border }: props) {
   const [selecter, setSelecter] = useState<string>("");
+  const nav = useRef<any>();
   const man: sections[] = [
     { name: "Shirts", id: 1 },
     { name: "Jeans", id: 2 },
@@ -23,8 +27,12 @@ export default function Nav() {
     { name: "Booots ", id: 4 },
   ];
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {});
+  }, []);
+
   return (
-    <div className="nav">
+    <div ref={nav} className={!border ? "nav" : "nav nav_border"}>
       <div className="nav_logo">
         <span>Brand</span>
         <span>O</span>

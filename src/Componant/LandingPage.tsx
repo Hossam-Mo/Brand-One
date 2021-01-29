@@ -6,7 +6,7 @@ export default function LandingPage() {
   return (
     <div>
       <div className="page">
-        <Nav></Nav>
+        <Nav border={false}></Nav>
         <div className="page_mid">
           <h2>New Era Of Fashion</h2>
           <div>

@@ -1,8 +1,16 @@
 .nav {
-  padding: 20px;
+  padding: 20px 0;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+.nav_border {
+  border-bottom: 1px solid rgb(150, 149, 149);
+  width: 100%;
 }
 .nav_logo {
   font-size: 40px;
