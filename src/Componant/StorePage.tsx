@@ -5,6 +5,19 @@ import "./storePage.css";
 export default function StorePage() {
   const [rotate, setRotate] = useState(false);
 
+  const piece: any = [
+    { name: "f" },
+    { name: "f" },
+    { name: "f" },
+
+    { name: "f" },
+    { name: "f" },
+    { name: "f" },
+    { name: "f" },
+    { name: "f" },
+    { name: "f" },
+  ];
+
   return (
     <div className="store">
       <Nav border={true}></Nav>
@@ -54,6 +67,17 @@ export default function StorePage() {
               </svg>
             </button>
           </div>
+        </div>
+        <div className="store_grid">
+          {piece.map((it: any) => {
+            return (
+              <div className="grid_card">
+                <h3>Manz Sport</h3>
+                <p>$ 39.99</p>
+                <img src="/assats/manBoots/MnzWhite.jpg" alt="White Boot"></img>
+              </div>
+            );
+          })}
         </div>
       </div>
     </div>
