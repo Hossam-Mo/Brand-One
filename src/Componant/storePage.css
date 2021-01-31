@@ -15,7 +15,7 @@
 .store_text {
   position: relative;
   margin-top: 300px;
-  margin-bottom: 150px;
+  margin-bottom: 139px;
   left: 120px;
   z-index: 5;
   font-size: 35px;
@@ -29,13 +29,14 @@
   margin-bottom: 20px;
 }
 .store_body {
-  height: 190vh;
+  height: 200vh;
+  background-size: contain;
 }
 .store_filter {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 40px;
+  padding: 20px 40px;
   position: sticky;
   top: 91px;
 }

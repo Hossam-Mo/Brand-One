@@ -16,7 +16,10 @@ export default function StorePage() {
         <p>Generous and reliable collection for man</p>
         <p>Take on one of our most popular boots.</p>
       </div>
-      <div className="store_body">
+      <div
+        style={{ backgroundImage: "url(/assats/landingPageBackGround.jpg)" }}
+        className="store_body"
+      >
         <div className="store_filter">
           <div>
             <h5>Home</h5>
