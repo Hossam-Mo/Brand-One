@@ -5,7 +5,10 @@ import Nav from "./Nav";
 export default function LandingPage() {
   return (
     <div>
-      <div className="page">
+      <div
+        style={{ backgroundImage: "url(/assats/landingPageBackGround.jpg)" }}
+        className="page"
+      >
         <Nav border={false}></Nav>
         <div className="page_mid">
           <h2>New Era Of Fashion</h2>

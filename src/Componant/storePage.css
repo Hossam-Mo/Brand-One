@@ -6,10 +6,78 @@
 .store_img {
   position: absolute;
   top: 0;
-
+  z-index: 0;
   height: 100vh;
   width: 100%;
-  background-image: url("../assats/manBackGround.jpg");
   background-size: cover;
   background-repeat: no-repeat;
+}
+.store_text {
+  position: relative;
+  margin-top: 300px;
+  margin-bottom: 150px;
+  left: 120px;
+  z-index: 5;
+  font-size: 35px;
+  font-family: "Fraunces";
+  font-weight: 900;
+  color: white;
+  text-shadow: 1px 1px black, 2px 2px black;
+  width: 400px;
+}
+.store_text > p:nth-child(1) {
+  margin-bottom: 20px;
+}
+.store_body {
+  height: 190vh;
+}
+.store_filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 40px;
+  position: sticky;
+  top: 91px;
+}
+
+.store_filter > div {
+  display: flex;
+  align-items: center;
+  font-family: "Lora";
+  font-weight: 400;
+  font-size: 18px;
+  color: #e7e4e4;
+}
+.store_filter > div > h5 {
+  margin-right: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+.store_filter > div > h5:hover {
+  color: #e1bf35;
+}
+.store_filter > div > h6 {
+  margin-right: 10px;
+  cursor: default;
+}
+.store_filter > div > button {
+  margin-top: 5px;
+  margin-left: 10px;
+  border: none;
+  background-color: transparent;
+  outline: none;
+  cursor: pointer;
+}
+
+.filter_arrow {
+  transition: all 0.5s ease-in-out;
+}
+.filter_arrow > path {
+  transition: all 0.5s ease-in-out;
+}
+.filter_arrow:hover > path {
+  fill: #dfb614;
+}
+.arrow_rotate {
+  transform: rotate(180deg);
 }
