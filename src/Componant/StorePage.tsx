@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import Nav from "./Nav";
 import "./storePage.css";
+import { AiOutlineInstagram } from "react-icons/ai";
+import { AiFillFacebook } from "react-icons/ai";
+import { AiOutlineTwitter } from "react-icons/ai";
+import { FaVimeoV } from "react-icons/fa";
 
 export default function StorePage() {
   const [rotate, setRotate] = useState(false);
@@ -79,9 +83,22 @@ export default function StorePage() {
             );
           })}
         </div>
+        <div className="store_footer">
+          <ul>
+            <li>©Brand one</li>
+            <li>Terms of Service</li>
+            <li>Privacy Policy</li>
+            <li>Shipping and Returns</li>
+            <li>FAQ</li>
+          </ul>
+          <div className="footer_icons">
+            <AiOutlineInstagram></AiOutlineInstagram>
+            <AiFillFacebook></AiFillFacebook>
+            <AiOutlineTwitter></AiOutlineTwitter>
+            <FaVimeoV></FaVimeoV>
+          </div>
+        </div>
       </div>
-
-     
     </div>
   );
 }

@@ -33,7 +33,8 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 100px;
+  padding-bottom: 200px;
+  position: relative;
 }
 
 .store_filter {
@@ -128,4 +129,46 @@
   height: 160px;
   width: 160px;
   margin-top: 40px;
+}
+.store_footer {
+  position: absolute;
+  bottom: 30px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+.store_footer > ul {
+  color: white;
+  display: flex;
+  align-items: center;
+  flex: 0.6;
+  justify-content: space-between;
+  list-style: none;
+  margin-left: 20px;
+  font-size: 14px;
+  font-family: "lora";
+}
+.store_footer > ul > li {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.store_footer > ul > :hover {
+  color: #dfb614;
+}
+.footer_icons {
+  color: white;
+  display: flex;
+  font-size: 18px;
+  align-items: center;
+  justify-content: space-evenly;
+  flex: 0.2;
+}
+.footer_icons > svg {
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+.footer_icons > svg:hover {
+  color: #dfb614;
 }
