@@ -1,6 +1,19 @@
 .store {
   background-color: #232323;
-  height: 300vh;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px #636262;
+}
+
+::-webkit-scrollbar-thumb {
+  background-image: linear-gradient(#e4b600, #232323);
+  border-radius: 10px;
 }
 
 .store_img {
@@ -14,8 +27,8 @@
 }
 .store_text {
   position: relative;
-  margin-top: 300px;
-  margin-bottom: 139px;
+  margin-top: 30vh;
+  margin-bottom: 20vh;
   left: 120px;
   z-index: 5;
   font-size: 35px;
@@ -92,9 +105,9 @@
 .store_grid {
   background-color: transparent;
   height: 100%;
-  width: 80%;
+  width: 90%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
   flex-wrap: wrap;
 }
 .grid_card {
@@ -102,27 +115,34 @@
   width: 25%;
   padding: 20px;
   background-color: white;
-
   margin-top: 110px;
   border-radius: 50px;
   box-shadow: 4px 4px 0px 0px #232323, 6px 6px 0px 0px white;
+  transition: all 0.7s ease-in-out;
+  cursor: pointer;
+}
+.card_pro {
   display: flex;
   flex-direction: column;
   align-items: center;
   font-family: "lora";
-  transition: all 0.7s ease-in-out;
-  cursor: pointer;
+}
+.grid_cardCal {
+  cursor: default;
+  width: 57%;
+  background-position: center;
+  background-size: cover;
 }
 .grid_card:hover {
   padding: 20px 40px;
 }
-.grid_card > h3 {
+.card_pro > h3 {
   width: 100%;
   margin-left: 40px;
   margin-top: 30px;
   color: #232323;
 }
-.grid_card > p {
+.card_pro p {
   width: 100%;
   margin-left: 40px;
   font-weight: 600;
@@ -130,11 +150,55 @@
   font-size: 14px;
   color: #e8ba00;
 }
-.grid_card > img {
+.card_pro img {
   height: 160px;
   width: 160px;
   margin-top: 40px;
 }
+
+.card_cal {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100%;
+  font-family: "Lobster Two";
+  margin-left: 20px;
+}
+
+.card_cal > div > span:nth-child(1) {
+  color: #dfb614;
+}
+.card_cal > div {
+  color: #232323;
+  font-size: 33px;
+}
+
+.card_cal > button {
+  width: 22%;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid #232323;
+  outline: none;
+  margin-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  cursor: pointer;
+}
+
+.grid_discover {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  color: #232323;
+  font-family: "Lobster Two";
+  font-size: 22px;
+}
+.grid_discover > div > span:nth-child(1) {
+  color: #dfb614;
+}
+
 .store_footer {
   position: absolute;
   bottom: 30px;
