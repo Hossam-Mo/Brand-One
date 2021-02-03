@@ -117,6 +117,9 @@ export default function StorePage() {
                       src="/assats/manBoots/MnzWhite.jpg"
                       alt="White Boot"
                     ></img>
+                    <div className="pro_view">
+                      <h4>View The Product</h4>
+                    </div>
                   </div>
                 )}
               </div>
