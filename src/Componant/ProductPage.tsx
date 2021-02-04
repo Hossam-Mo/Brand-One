@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import Nav from "./Nav";
 import "./productPage.css";
 import { AiFillStar } from "react-icons/ai";
 
 export default function ProductPage() {
+  const [colorName, setColorName] = useState(0);
   const product = {
-    rating: 3.4,
-    colors: ["blue", "red", "white"],
+    rating: 3.8,
+    colors: ["blue", "red", "white", "black"],
   };
   const rating = () => {
     let stars = [];
@@ -21,10 +22,15 @@ export default function ProductPage() {
     let colorsNumber = product.colors.length;
     for (let i = 0; i < colorsNumber; i++) {
       color.push(
-        <div
-          className="product_color"
-          style={{ backgroundColor: product.colors[i] }}
-        ></div>
+        <div key={i} className="product_buttons">
+          <button
+            onMouseEnter={() => {
+              setColorName(i);
+            }}
+            className="product_color"
+            style={{ backgroundColor: product.colors[i] }}
+          ></button>
+        </div>
       );
     }
     return color;
@@ -48,7 +54,7 @@ export default function ProductPage() {
           <div className="product_colors">
             <div>{colors()}</div>
 
-            <p>black</p>
+            <p>{product.colors[colorName]}</p>
           </div>
         </div>
       </div>
