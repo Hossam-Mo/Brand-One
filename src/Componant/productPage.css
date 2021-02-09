@@ -5,6 +5,8 @@
   width: 45%;
   height: 100vh;
   background-color: #2b2b2b;
+  display: flex;
+  align-items: center;
 }
 .left_contant {
   padding: 20px;
@@ -20,7 +22,7 @@
   margin-bottom: 30px;
 }
 .left_contant > h1 {
-  margin-top: 180px;
+  margin-top: 80px;
   margin-bottom: 15px;
 }
 .left_price {
@@ -115,4 +117,23 @@
 }
 .size_selecter:checked + label {
   color: #e1bf35;
+}
+.product_add {
+  margin-top: 33px;
+  padding: 15px;
+  border: 1px solid #e1bf35;
+  background-color: #e1bf35;
+  font-size: 18px;
+  font-weight: 800;
+  font-family: "Lora";
+  color: #2b2b2b;
+  border-radius: 50px;
+  outline: none;
+  cursor: pointer;
+  transition: all 0.5s ease-in-out;
+}
+.product_add:hover {
+  background-color: #2b2b2b;
+  color: rgb(238, 238, 238);
+  border-color: rgb(223, 223, 223);
 }

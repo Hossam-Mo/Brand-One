@@ -78,6 +78,7 @@ export default function ProductPage() {
               );
             })}
           </div>
+          <button className='product_add'>Add to Cart</button>
         </div>
       </div>
     </div>
