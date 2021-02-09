@@ -8,6 +8,7 @@ export default function ProductPage() {
   const product = {
     rating: 3.8,
     colors: ["blue", "red", "white", "black"],
+    size: ["39", "40"],
   };
   const rating = () => {
     let stars = [];
@@ -55,6 +56,16 @@ export default function ProductPage() {
             <div>{colors()}</div>
 
             <p>{product.colors[colorName]}</p>
+          </div>
+          <div className="product_size">
+            {product.size.map((it) => {
+              return (
+                <div key={it}>
+                  <input name="size" id={it} type="radio" />
+                  <label htmlFor={it}>{it}</label>
+                </div>
+              );
+            })}
           </div>
         </div>
       </div>
