@@ -1,14 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
 import "./productPage.css";
 import { AiFillStar } from "react-icons/ai";
 
 export default function ProductPage() {
   const [colorName, setColorName] = useState(0);
+  const [size, setSize] = useState("");
+
   const product = {
     rating: 3.8,
     colors: ["blue", "red", "white", "black"],
-    size: ["39", "40"],
+    size: ["39", "40", "41"],
   };
   const rating = () => {
     let stars = [];
@@ -57,11 +59,20 @@ export default function ProductPage() {
 
             <p>{product.colors[colorName]}</p>
           </div>
+          <h5 className="product_sizeLabel">size</h5>
           <div className="product_size">
             {product.size.map((it) => {
               return (
-                <div key={it}>
-                  <input name="size" id={it} type="radio" />
+                <div className="size_item" key={it}>
+                  <input
+                    className="size_selecter"
+                    name="size"
+                    id={it}
+                    type="radio"
+                    onClick={() => {
+                      setSize(it);
+                    }}
+                  />
                   <label htmlFor={it}>{it}</label>
                 </div>
               );
