@@ -11,6 +11,11 @@ export default function ProductPage() {
     rating: 3.8,
     colors: ["blue", "red", "white", "black"],
     size: ["39", "40", "41"],
+    imgs: [
+      "/assats/manBoots/MnzBlack.jpg",
+      "/assats/manBoots/MnzBlack.jpg",
+      "/assats/manBoots/MnzBlack.jpg",
+    ],
   };
   const rating = () => {
     let stars = [];
@@ -78,8 +83,17 @@ export default function ProductPage() {
               );
             })}
           </div>
-          <button className='product_add'>Add to Cart</button>
+          <button className="product_add">Add to Cart</button>
         </div>
+      </div>
+      <div className="product_right">
+        {product.imgs.map((img) => {
+          return (
+            <div className="right_imgCint">
+              <img className="right_img" src={img} alt="boot"></img>
+            </div>
+          );
+        })}
       </div>
     </div>
   );
