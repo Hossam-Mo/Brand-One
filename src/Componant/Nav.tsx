@@ -8,9 +8,10 @@ interface sections {
 }
 interface props {
   border: boolean;
+  scroll: boolean;
 }
 
-export default function Nav({ border }: props) {
+export default function Nav({ border, scroll }: props) {
   const [selecter, setSelecter] = useState<string>("");
   const [navColor, setNavColor] = useState<boolean>(false);
 
@@ -29,18 +30,20 @@ export default function Nav({ border }: props) {
   ];
 
   useEffect(() => {
-    const navScroll = () => {
-      if (window.scrollY > 100) {
-        setNavColor(true);
-      } else {
-        setNavColor(false);
-      }
-    };
-    window.addEventListener("scroll", navScroll);
+    if (scroll) {
+      const navScroll = () => {
+        if (window.scrollY > 100) {
+          setNavColor(true);
+        } else {
+          setNavColor(false);
+        }
+      };
+      window.addEventListener("scroll", navScroll);
 
-    return () => {
-      if (window) window.removeEventListener("scroll", navScroll);
-    };
+      return () => {
+        if (window) window.removeEventListener("scroll", navScroll);
+      };
+    }
   }, []);
 
   return (

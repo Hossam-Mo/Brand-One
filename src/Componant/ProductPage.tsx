@@ -45,7 +45,7 @@ export default function ProductPage() {
   };
   return (
     <div className="product">
-      <Nav border={true}></Nav>
+      <Nav border={true} scroll={false}></Nav>
       <div className="product_left">
         <div className="left_contant">
           <h1>Manz Sport</h1>

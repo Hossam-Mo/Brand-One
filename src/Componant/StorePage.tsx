@@ -26,7 +26,7 @@ export default function StorePage() {
 
   return (
     <div className="store">
-      <Nav border={true}></Nav>
+      <Nav border={true} scroll={true}></Nav>
       <div
         style={{ backgroundImage: "url(/assats/manBackGround.jpg)" }}
         className="store_img"
