@@ -145,7 +145,7 @@
   width: 55%;
 }
 .right_imgCint {
-  height: 90vh;
+  height: calc(100vh - 91.4px);
   width: 100%;
   display: flex;
   align-items: center;
@@ -155,4 +155,5 @@
   object-fit: contain;
   width: 50%;
   height: 300px;
+  pointer-events: none;
 }
