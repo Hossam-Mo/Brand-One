@@ -12,9 +12,13 @@ export default function ProductPage() {
     colors: ["blue", "red", "white", "black"],
     size: ["39", "40", "41"],
     imgs: [
-      "/assats/manBoots/MnzBlack.jpg",
-      "/assats/manBoots/MnzBlack.jpg",
-      "/assats/manBoots/MnzBlack.jpg",
+      { img: "/assats/manBoots/MnzBlack.jpg", id: "1" },
+      { img: "/assats/manBoots/MnzBlack.jpg", id: "2" },
+      { img: "/assats/manBoots/MnzBlack.jpg", id: "3" },
+      { img: "/assats/manBoots/MnzBlack.jpg", id: "4" },
+      { img: "/assats/manBoots/MnzBlack.jpg", id: "5" },
+      { img: "/assats/manBoots/MnzBlack.jpg", id: "6" },
+      { img: "/assats/manBoots/MnzBlack.jpg", id: "7" },
     ],
   };
   const rating = () => {
@@ -87,10 +91,19 @@ export default function ProductPage() {
         </div>
       </div>
       <div className="product_right">
+        <div className="right_imgLinks">
+          {product.imgs.map((img) => {
+            return (
+              <a key={img.id} href={`#${img.id}`}>
+                <img src={img.img} alt="product"></img>
+              </a>
+            );
+          })}
+        </div>
         {product.imgs.map((img) => {
           return (
-            <div className="right_imgCint">
-              <img className="right_img" src={img} alt="boot"></img>
+            <div key={img.id} id={img.id} className="right_imgCint">
+              <img className="right_img" src={img.img} alt="boot"></img>
             </div>
           );
         })}
