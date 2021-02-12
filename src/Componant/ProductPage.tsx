@@ -3,9 +3,16 @@ import Nav from "./Nav";
 import "./productPage.css";
 import { AiFillStar } from "react-icons/ai";
 
+interface imgs {
+  img: string;
+  id: string;
+}
+
 export default function ProductPage() {
   const [colorName, setColorName] = useState(0);
   const [size, setSize] = useState("");
+  const [sideImgs, setSideImgs] = useState<imgs[]>([]);
+  const [limit, setLimit] = useState(4);
 
   const product = {
     rating: 3.8,
@@ -47,6 +54,10 @@ export default function ProductPage() {
     }
     return color;
   };
+
+  useEffect(() => {
+    setSideImgs(product.imgs.slice(0, limit));
+  }, [limit]);
   return (
     <div className="product">
       <Nav border={true} scroll={false}></Nav>
@@ -92,7 +103,7 @@ export default function ProductPage() {
       </div>
       <div className="product_right">
         <div className="right_imgLinks">
-          {product.imgs.map((img) => {
+          {sideImgs.map((img) => {
             return (
               <a key={img.id} href={`#${img.id}`}>
                 <img src={img.img} alt="product"></img>
@@ -100,7 +111,7 @@ export default function ProductPage() {
             );
           })}
         </div>
-        {product.imgs.map((img) => {
+        {sideImgs.map((img) => {
           return (
             <div key={img.id} id={img.id} className="right_imgCint">
               <img className="right_img" src={img.img} alt="boot"></img>
