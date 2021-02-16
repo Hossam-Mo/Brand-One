@@ -10,11 +10,16 @@ interface imgs {
 
 export default function ProductPage() {
   const [colorName, setColorName] = useState(0);
+  const [imgName, setImgName] = useState(0);
   const [size, setSize] = useState("");
   const [sideImgs, setSideImgs] = useState<imgs[]>([]);
+
   const [limit, setLimit] = useState(4);
 
-  const product = {
+  /* const product = {
+    price: "39.99",
+    id: "12313",
+    name: "manz sport",
     rating: 3.8,
     colors: ["blue", "red", "white", "black"],
     size: ["39", "40", "41"],
@@ -27,7 +32,48 @@ export default function ProductPage() {
       { img: "/assats/manBoots/MnzBlack.jpg", id: "6" },
       { img: "/assats/manBoots/MnzBlack.jpg", id: "7" },
     ],
+  };*/
+  const product = {
+    price: "39.99",
+    id: "12313",
+    name: "manz sport",
+    rating: 3.8,
+    colors: [
+      {
+        color: "blue",
+        imgs: [
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "1" },
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "2" },
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "3" },
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "4" },
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "5" },
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "6" },
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "7" },
+        ],
+      },
+      {
+        color: "red",
+        imgs: [
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "1" },
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "2" },
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "3" },
+        ],
+      },
+      {
+        color: "white",
+        imgs: [
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "1" },
+          { img: "/assats/manBoots/MnzBlack.jpg", id: "2" },
+        ],
+      },
+      {
+        color: "black",
+        imgs: [{ img: "/assats/manBoots/MnzBlack.jpg", id: "1" }],
+      },
+    ],
+    size: ["39", "40", "41"],
   };
+
   const rating = () => {
     let stars = [];
     let rating = Math.round(product.rating);
@@ -43,11 +89,14 @@ export default function ProductPage() {
       color.push(
         <div key={i} className="product_buttons">
           <button
+            onClick={() => {
+              setImgName(i);
+            }}
             onMouseEnter={() => {
               setColorName(i);
             }}
             className="product_color"
-            style={{ backgroundColor: product.colors[i] }}
+            style={{ backgroundColor: product.colors[i].color }}
           ></button>
         </div>
       );
@@ -56,8 +105,8 @@ export default function ProductPage() {
   };
 
   useEffect(() => {
-    setSideImgs(product.imgs.slice(0, limit));
-  }, [limit]);
+    setSideImgs(product.colors[imgName].imgs.slice(0, limit));
+  }, [limit, imgName]);
   return (
     <div className="product">
       <Nav border={true} scroll={false}></Nav>
@@ -77,7 +126,7 @@ export default function ProductPage() {
           <div className="product_colors">
             <div>{colors()}</div>
 
-            <p>{product.colors[colorName]}</p>
+            <p>{product.colors[colorName].color}</p>
           </div>
           <h5 className="product_sizeLabel">size</h5>
           <div className="product_size">

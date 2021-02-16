@@ -5,7 +5,7 @@ import { AiOutlineInstagram } from "react-icons/ai";
 import { AiFillFacebook } from "react-icons/ai";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaVimeoV } from "react-icons/fa";
-import { url } from "inspector";
+
 
 export default function StorePage() {
   const [rotate, setRotate] = useState(false);
