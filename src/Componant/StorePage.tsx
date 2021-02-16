@@ -1,14 +1,30 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import Nav from "./Nav";
 import "./storePage.css";
 import { AiOutlineInstagram } from "react-icons/ai";
 import { AiFillFacebook } from "react-icons/ai";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaVimeoV } from "react-icons/fa";
-
+import axios from "axios";
 
 export default function StorePage() {
   const [rotate, setRotate] = useState(false);
+
+  useEffect(() => {
+    axios
+      .get("http://localhost:5000/")
+      .then((r) => {
+        console.log(r);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+  const x = () => {
+    axios.post("http://localhost:5000/", { mess: "fuck" }).then((r) => {
+      console.log(r);
+    });
+  };
 
   const piece: any = [
     { name: "f" },
@@ -40,7 +56,7 @@ export default function StorePage() {
         className="store_body"
       >
         <div className="store_filter">
-          <div>
+          <div onClick={x}>
             <h5>Home</h5>
             <h6> /</h6>
             <h5>Man </h5>

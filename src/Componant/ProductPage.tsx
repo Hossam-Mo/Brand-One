@@ -33,6 +33,7 @@ export default function ProductPage() {
       { img: "/assats/manBoots/MnzBlack.jpg", id: "7" },
     ],
   };*/
+
   const product = {
     price: "39.99",
     id: "12313",

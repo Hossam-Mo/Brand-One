@@ -8,7 +8,7 @@ import StorePage from "./Componant/StorePage";
 function App() {
   return (
     <div className="App">
-      <ProductPage></ProductPage>
+      <StorePage></StorePage>
     </div>
   );
 }
