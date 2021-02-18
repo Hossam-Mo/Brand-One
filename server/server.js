@@ -18,10 +18,32 @@ app.get("/", (req, res) => {
       res.json({ mess: "err" });
     });
 });
+app.get("/:id", (req, res) => {
+  product
+    .updateOne({ _id: req.params.id }, { $pull: { colors: { color: "xxx" } } })
+    .then((r) => {
+      res.json(r);
+    })
+    .catch((err) => {
+      res.json({ mess: "err" });
+    });
+
+  //product
+  //.updateOne(
+  //{ _id: req.params.id },
+  //{ $push: { colors: { color: "xxx", imgs: [{ img: "fff" }] } } }
+  //)
+  //.then((r) => {
+  // res.json(r);
+  // })
+  //.catch((err) => {
+  // res.json({ mess: err });
+  // });
+});
 app.post("/", (req, res) => {
   pr = new product({
     price: "39.99",
-
+    saction: "man",
     name: "manz sport",
     rating: 3.8,
     colors: [
@@ -57,9 +79,7 @@ app.post("/", (req, res) => {
     ],
     size: ["39", "40", "41"],
   });
-  pr.save().then((r) => {
-    res.json(r);
-  });
+  pr.save();
 });
 
 mongoose.connect(
