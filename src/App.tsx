@@ -4,11 +4,24 @@ import "./App.css";
 import LandingPage from "./Componant/LandingPage";
 import ProductPage from "./Componant/ProductPage";
 import StorePage from "./Componant/StorePage";
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
-      <StorePage></StorePage>
+      <Router>
+        <Switch>
+          <Route path="/man/:productId">
+            <ProductPage></ProductPage>
+          </Route>
+          <Route path="/man">
+            <StorePage></StorePage>
+          </Route>
+          <Route path="/">
+            <LandingPage></LandingPage>
+          </Route>
+        </Switch>
+      </Router>
     </div>
   );
 }

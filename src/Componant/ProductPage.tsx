@@ -55,9 +55,9 @@ export default function ProductPage() {
       {
         color: "red",
         imgs: [
-          { img: "/assats/manBoots/MnzBlack.jpg", id: "1" },
-          { img: "/assats/manBoots/MnzBlack.jpg", id: "2" },
-          { img: "/assats/manBoots/MnzBlack.jpg", id: "3" },
+          { img: "/assats/manBoots/MnzWhite.jpg", id: "1" },
+          { img: "/assats/manBoots/MnzWhite.jpg", id: "2" },
+          { img: "/assats/manBoots/MnzWhite.jpg", id: "3" },
         ],
       },
       {

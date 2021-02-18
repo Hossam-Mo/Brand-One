@@ -7,14 +7,27 @@ import { AiOutlineTwitter } from "react-icons/ai";
 import { FaVimeoV } from "react-icons/fa";
 import axios from "axios";
 
+interface products {
+  _id: string;
+  price: string;
+  name: string;
+  rating: number;
+  saction: string;
+  size: [string];
+  colors: [{ color: string; imgs: [{ img: string; _id: string }] }];
+  cal?: any;
+}
+
 export default function StorePage() {
   const [rotate, setRotate] = useState(false);
+  const [products, setProducts] = useState<products[]>([]);
 
   useEffect(() => {
     axios
       .get("http://localhost:5000/")
       .then((r) => {
-        console.log(r);
+        console.log(r.data);
+        setProducts(r.data);
       })
       .catch((err) => {
         console.log(err);
@@ -91,7 +104,7 @@ export default function StorePage() {
           </div>
         </div>
         <div className="store_grid">
-          {piece.map((it: any) => {
+          {products.map((it) => {
             return (
               <div
                 style={it.cal && { backgroundImage: "url(/assats/cal3.jpg)" }}
@@ -127,12 +140,9 @@ export default function StorePage() {
                   </div>
                 ) : (
                   <div className="card_pro">
-                    <h3>Manz Sport</h3>
-                    <p>$ 39.99</p>
-                    <img
-                      src="/assats/manBoots/MnzWhite.jpg"
-                      alt="White Boot"
-                    ></img>
+                    <h3>{it.name}</h3>
+                    <p>{it.price}</p>
+                    <img src={it.colors[0].imgs[0].img} alt="White Boot"></img>
                     <div className="pro_view">
                       <h4>View The Product</h4>
                     </div>

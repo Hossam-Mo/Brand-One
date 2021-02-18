@@ -44,37 +44,41 @@ app.post("/", (req, res) => {
   pr = new product({
     price: "39.99",
     saction: "man",
-    name: "manz sport",
+    name: "Manz Sport",
     rating: 3.8,
     colors: [
       {
         color: "blue",
         imgs: [
-          { img: "/assats/manBoots/MnzBlack.jpg" },
-          { img: "/assats/manBoots/MnzBlack.jpg" },
-          { img: "/assats/manBoots/MnzBlack.jpg" },
-          { img: "/assats/manBoots/MnzBlack.jpg" },
-          { img: "/assats/manBoots/MnzBlack.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
         ],
       },
       {
         color: "red",
         imgs: [
-          { img: "/assats/manBoots/MnzBlack.jpg" },
-          { img: "/assats/manBoots/MnzBlack.jpg" },
-          { img: "/assats/manBoots/MnzBlack.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
         ],
       },
       {
         color: "white",
         imgs: [
-          { img: "/assats/manBoots/MnzBlack.jpg" },
-          { img: "/assats/manBoots/MnzBlack.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
+          { img: "/assats/manBoots/MnzWhite.jpg" },
         ],
       },
       {
         color: "black",
-        imgs: [{ img: "/assats/manBoots/MnzBlack.jpg" }],
+        imgs: [{ img: "/assats/manBoots/MnzWhite.jpg" }],
       },
     ],
     size: ["39", "40", "41"],
