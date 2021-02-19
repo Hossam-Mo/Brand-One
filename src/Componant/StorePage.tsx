@@ -27,7 +27,26 @@ export default function StorePage() {
       .get("http://localhost:5000/")
       .then((r) => {
         console.log(r.data);
-        setProducts(r.data);
+        let newR = [];
+        for (let i = 0; i < r.data.length; i++) {
+          if (i === 4) {
+            newR.push({
+              _id: "",
+              price: "",
+              name: "",
+              rating: 0,
+              saction: "",
+              size: [],
+              colors: [{ color: "", imgs: [{ img: "", _id: "" }] }],
+              cal: true,
+            });
+            newR.push(r.data[i]);
+          } else {
+            newR.push(r.data[i]);
+          }
+        }
+
+        setProducts(newR);
       })
       .catch((err) => {
         console.log(err);
@@ -138,7 +157,7 @@ export default function StorePage() {
                       </div>
                     </button>
                   </div>
-                ) : (
+                ) : it.saction === "man" ? (
                   <div className="card_pro">
                     <h3>{it.name}</h3>
                     <p>{it.price}</p>
@@ -147,6 +166,8 @@ export default function StorePage() {
                       <h4>View The Product</h4>
                     </div>
                   </div>
+                ) : (
+                  <div className="fucker"></div>
                 )}
               </div>
             );
