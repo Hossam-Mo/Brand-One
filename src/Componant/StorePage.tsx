@@ -6,6 +6,7 @@ import { AiFillFacebook } from "react-icons/ai";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaVimeoV } from "react-icons/fa";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 interface products {
   _id: string;
@@ -18,9 +19,16 @@ interface products {
   cal?: any;
 }
 
+interface ParamTypes {
+  section: string;
+}
 export default function StorePage() {
   const [rotate, setRotate] = useState(false);
   const [products, setProducts] = useState<products[]>([]);
+  const { section } = useParams<ParamTypes>();
+  useEffect(() => {
+    console.log(section);
+  }, [section]);
 
   useEffect(() => {
     axios
@@ -29,13 +37,13 @@ export default function StorePage() {
         console.log(r.data);
         let newR = [];
         for (let i = 0; i < r.data.length; i++) {
-          if (i === 4) {
+          if (i === 5) {
             newR.push({
               _id: "",
               price: "",
               name: "",
               rating: 0,
-              saction: "",
+              saction: section,
               size: [],
               colors: [{ color: "", imgs: [{ img: "", _id: "" }] }],
               cal: true,
@@ -125,51 +133,55 @@ export default function StorePage() {
         <div className="store_grid">
           {products.map((it) => {
             return (
-              <div
-                style={it.cal && { backgroundImage: "url(/assats/cal3.jpg)" }}
-                className={`grid_card ${it.cal && "grid_cardCal"}`}
-              >
-                {it.cal ? (
-                  <div className="card_cal">
-                    <div>
-                      <span>C</span>
-                      <span>ollections</span>
-                    </div>
-                    <button>
-                      <div className="grid_discover">
-                        <div>
-                          <span>D</span>
-                          <span>iscover</span>
-                        </div>
-
-                        <svg
-                          width="19"
-                          height="9"
-                          viewBox="0 0 26 16"
-                          fill="none"
-                          xmlns="http://www.w3.org/2000/svg"
-                        >
-                          <path
-                            d="M25.7071 8.70711C26.0976 8.31658 26.0976 7.68342 25.7071 7.29289L19.3431 0.928932C18.9526 0.538408 18.3195 0.538408 17.9289 0.928932C17.5384 1.31946 17.5384 1.95262 17.9289 2.34315L23.5858 8L17.9289 13.6569C17.5384 14.0474 17.5384 14.6805 17.9289 15.0711C18.3195 15.4616 18.9526 15.4616 19.3431 15.0711L25.7071 8.70711ZM0 9H25V7H0V9Z"
-                            fill="#232323"
-                          />
-                        </svg>
+              it.saction === section && (
+                <div
+                  key={it._id}
+                  style={it.cal && { backgroundImage: "url(/assats/cal3.jpg)" }}
+                  className={`grid_card ${it.cal && "grid_cardCal"}`}
+                >
+                  {it.cal ? (
+                    <div className="card_cal">
+                      <div>
+                        <span>C</span>
+                        <span>ollections</span>
                       </div>
-                    </button>
-                  </div>
-                ) : it.saction === "man" ? (
-                  <div className="card_pro">
-                    <h3>{it.name}</h3>
-                    <p>{it.price}</p>
-                    <img src={it.colors[0].imgs[0].img} alt="White Boot"></img>
-                    <div className="pro_view">
-                      <h4>View The Product</h4>
+                      <button>
+                        <div className="grid_discover">
+                          <div>
+                            <span>D</span>
+                            <span>iscover</span>
+                          </div>
+
+                          <svg
+                            width="19"
+                            height="9"
+                            viewBox="0 0 26 16"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                          >
+                            <path
+                              d="M25.7071 8.70711C26.0976 8.31658 26.0976 7.68342 25.7071 7.29289L19.3431 0.928932C18.9526 0.538408 18.3195 0.538408 17.9289 0.928932C17.5384 1.31946 17.5384 1.95262 17.9289 2.34315L23.5858 8L17.9289 13.6569C17.5384 14.0474 17.5384 14.6805 17.9289 15.0711C18.3195 15.4616 18.9526 15.4616 19.3431 15.0711L25.7071 8.70711ZM0 9H25V7H0V9Z"
+                              fill="#232323"
+                            />
+                          </svg>
+                        </div>
+                      </button>
                     </div>
-                  </div>
-                ) : (
-                  <div className="fucker"></div>
-                )}
-              </div>
+                  ) : (
+                    <div className="card_pro">
+                      <h3>{it.name}</h3>
+                      <p>{it.price}</p>
+                      <img
+                        src={it.colors[0].imgs[0].img}
+                        alt="White Boot"
+                      ></img>
+                      <div className="pro_view">
+                        <h4>View The Product</h4>
+                      </div>
+                    </div>
+                  )}
+                </div>
+              )
             );
           })}
         </div>
