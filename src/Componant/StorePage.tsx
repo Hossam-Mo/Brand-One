@@ -92,8 +92,8 @@ export default function StorePage() {
         className="store_img"
       ></div>
       <div className="store_text">
-        <p>Generous and reliable collection for man</p>
-        <p>Take on one of our most popular boots.</p>
+        <p>Generous and reliable collection for {section?.toLowerCase()}</p>
+        <p>Take on one of our most popular {type?.toLowerCase()}.</p>
       </div>
       <div
         style={{ backgroundImage: "url(/assats/landingPageBackGround.jpg)" }}

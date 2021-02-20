@@ -38,6 +38,7 @@
   text-shadow: 1px 1px black, 2px 2px black;
   width: 400px;
 }
+
 .store_text > p:nth-child(1) {
   margin-bottom: 20px;
 }

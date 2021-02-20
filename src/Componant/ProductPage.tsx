@@ -16,24 +16,6 @@ export default function ProductPage() {
 
   const [limit, setLimit] = useState(4);
 
-  /* const product = {
-    price: "39.99",
-    id: "12313",
-    name: "manz sport",
-    rating: 3.8,
-    colors: ["blue", "red", "white", "black"],
-    size: ["39", "40", "41"],
-    imgs: [
-      { img: "/assats/manBoots/MnzBlack.jpg", id: "1" },
-      { img: "/assats/manBoots/MnzBlack.jpg", id: "2" },
-      { img: "/assats/manBoots/MnzBlack.jpg", id: "3" },
-      { img: "/assats/manBoots/MnzBlack.jpg", id: "4" },
-      { img: "/assats/manBoots/MnzBlack.jpg", id: "5" },
-      { img: "/assats/manBoots/MnzBlack.jpg", id: "6" },
-      { img: "/assats/manBoots/MnzBlack.jpg", id: "7" },
-    ],
-  };*/
-
   const product = {
     price: "39.99",
     id: "12313",
