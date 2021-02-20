@@ -57,13 +57,13 @@ export default function StorePage() {
             newR.push(r.data[i]);
           }
         }
-
+        console.log(newR);
         setProducts(newR);
       })
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [type, section]);
   const x = () => {
     axios.post("http://localhost:5000/", { mess: "fuck" }).then((r) => {
       console.log(r);

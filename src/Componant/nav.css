@@ -96,14 +96,16 @@
   justify-content: center;
   align-items: center;
 }
-.right_slide > p {
+.right_slide > a {
   margin-top: 50px;
   font-size: 25px;
   font-family: "Fraunces";
   transition: all 0.2s ease-in-out;
   cursor: pointer;
+  text-decoration: none;
+  color: white;
 }
-.right_slide > p:hover {
+.right_slide > a:hover {
   color: #e1bf35;
 }
 .close {

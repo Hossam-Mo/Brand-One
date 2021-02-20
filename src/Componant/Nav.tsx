@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import "./nav.css";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { Link } from "react-router-dom";
 
 interface sections {
   name: string;
@@ -18,15 +19,15 @@ export default function Nav({ border, scroll }: props) {
   const man: sections[] = [
     { name: "Shirts", id: 1 },
     { name: "Jeans", id: 2 },
-    { name: "Jackets ", id: 3 },
-    { name: "Boots ", id: 4 },
+    { name: "Jackets", id: 3 },
+    { name: "Boots", id: 4 },
   ];
 
   const woman: sections[] = [
     { name: "Shirts", id: 1 },
     { name: "Jeans", id: 2 },
-    { name: "Jackets ", id: 3 },
-    { name: "Booots ", id: 4 },
+    { name: "Jackets", id: 3 },
+    { name: "Booots", id: 4 },
   ];
 
   useEffect(() => {
@@ -94,10 +95,18 @@ export default function Nav({ border, scroll }: props) {
           <div className="right_slide">
             {selecter === "man"
               ? man.map((it) => {
-                  return <p key={it.id}>{it.name}</p>;
+                  return (
+                    <Link to={`/man/${it.name}`} key={it.id}>
+                      {it.name}
+                    </Link>
+                  );
                 })
               : woman.map((it) => {
-                  return <p key={it.id}>{it.name}</p>;
+                  return (
+                    <Link to={`/woman/${it.name}`} key={it.id}>
+                      {it.name}
+                    </Link>
+                  );
                 })}
           </div>
         </div>
