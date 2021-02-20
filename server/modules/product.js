@@ -5,6 +5,7 @@ const product = mongoose.Schema({
   name: String,
   rating: Number,
   saction: String,
+  type: String,
   size: [String],
   colors: [{ color: String, imgs: [{ img: String }] }],
 });

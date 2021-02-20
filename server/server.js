@@ -45,6 +45,7 @@ app.post("/", (req, res) => {
     price: "39.99",
     saction: "man",
     name: "Manz Sport",
+    type: "boot",
     rating: 3.8,
     colors: [
       {

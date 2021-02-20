@@ -14,22 +14,25 @@ interface products {
   name: string;
   rating: number;
   saction: string;
+  type: string;
   size: [string];
   colors: [{ color: string; imgs: [{ img: string; _id: string }] }];
   cal?: any;
 }
 
 interface ParamTypes {
-  section: string;
+  section?: string;
+  type?: string;
 }
 export default function StorePage() {
   const [rotate, setRotate] = useState(false);
   const [products, setProducts] = useState<products[]>([]);
   const { section } = useParams<ParamTypes>();
-  useEffect(() => {
-    console.log(section);
-  }, [section]);
+  const { type } = useParams<ParamTypes>();
 
+  useEffect(() => {
+    console.log(type);
+  }, [type]);
   useEffect(() => {
     axios
       .get("http://localhost:5000/")
@@ -37,13 +40,14 @@ export default function StorePage() {
         console.log(r.data);
         let newR = [];
         for (let i = 0; i < r.data.length; i++) {
-          if (i === 5) {
+          if (i === 4) {
             newR.push({
               _id: "",
               price: "",
               name: "",
               rating: 0,
               saction: section,
+              type: type,
               size: [],
               colors: [{ color: "", imgs: [{ img: "", _id: "" }] }],
               cal: true,
@@ -133,7 +137,8 @@ export default function StorePage() {
         <div className="store_grid">
           {products.map((it) => {
             return (
-              it.saction === section && (
+              it.saction === section &&
+              it.type === type && (
                 <div
                   key={it._id}
                   style={it.cal && { backgroundImage: "url(/assats/cal3.jpg)" }}

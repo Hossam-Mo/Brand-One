@@ -11,10 +11,10 @@ function App() {
     <div className="App">
       <Router>
         <Switch>
-          <Route path="/:section/:productId">
+          <Route path="/:section/:type/:productId">
             <ProductPage></ProductPage>
           </Route>
-          <Route path="/:section">
+          <Route path="/:section/:type">
             <StorePage></StorePage>
           </Route>
           <Route path="/">
