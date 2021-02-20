@@ -22,7 +22,8 @@
   color: white;
   font-family: "Lobster Two";
   margin-left: 50px;
-  cursor: default;
+  cursor: pointer;
+  text-decoration: none;
 }
 .nav_logo > span:nth-child(2) {
   color: #e1bf35;

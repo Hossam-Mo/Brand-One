@@ -53,11 +53,11 @@ export default function Nav({ border, scroll }: props) {
         !border ? "nav" : `nav nav_border ${navColor && "nav_scrollColor"} `
       }
     >
-      <div className="nav_logo">
+      <Link to="/" className="nav_logo">
         <span>Brand</span>
         <span>O</span>
         <span>ne </span>
-      </div>
+      </Link>
       <div className="nav_right">
         <div className="nav_list">
           <input
