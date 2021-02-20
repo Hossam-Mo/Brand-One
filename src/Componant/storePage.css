@@ -126,6 +126,7 @@
   flex-direction: column;
   align-items: center;
   font-family: "lora";
+  text-decoration: none;
 }
 .grid_cardCal {
   cursor: default;

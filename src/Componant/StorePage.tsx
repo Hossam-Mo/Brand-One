@@ -6,7 +6,7 @@ import { AiFillFacebook } from "react-icons/ai";
 import { AiOutlineTwitter } from "react-icons/ai";
 import { FaVimeoV } from "react-icons/fa";
 import axios from "axios";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 interface products {
   _id: string;
@@ -173,7 +173,10 @@ export default function StorePage() {
                       </button>
                     </div>
                   ) : (
-                    <div className="card_pro">
+                    <Link
+                      to={`/${it.saction}/${it.type}/${it._id}`}
+                      className="card_pro"
+                    >
                       <h3>{it.name}</h3>
                       <p>{it.price}</p>
                       <img
@@ -183,7 +186,7 @@ export default function StorePage() {
                       <div className="pro_view">
                         <h4>View The Product</h4>
                       </div>
-                    </div>
+                    </Link>
                   )}
                 </div>
               )
