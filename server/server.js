@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
       res.json(r);
     })
     .catch((err) => {
-      res.json({ mess: "err" });
+      res.json(err);
     });
 });
 app.get("/:id", (req, res) => {
@@ -25,7 +25,7 @@ app.get("/:id", (req, res) => {
       res.json(r);
     })
     .catch((err) => {
-      res.json({ mess: "err" });
+      res.json({ mess: err });
     });
 
   //product
