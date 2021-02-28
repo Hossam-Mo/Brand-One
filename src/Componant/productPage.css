@@ -1,6 +1,9 @@
 html {
   scroll-behavior: smooth;
 }
+.product {
+  background-color: #232323;
+}
 .product_left {
   position: fixed;
   right: 0;
