@@ -20,13 +20,21 @@ app.get("/", (req, res) => {
 });
 app.get("/:id", (req, res) => {
   product
-    .updateOne({ _id: req.params.id }, { $pull: { colors: { color: "xxx" } } })
+    .findById(req.params.id)
     .then((r) => {
       res.json(r);
     })
     .catch((err) => {
-      res.json({ mess: err });
+      res.json({ mess: "err" });
     });
+  //product
+  //.updateOne({ _id: req.params.id }, { $pull: { colors: { color: "xxx" } } })
+  //.then((r) => {
+  // res.json(r);
+  //})
+  //.catch((err) => {
+  //  res.json({ mess: err });
+  //  });
 
   //product
   //.updateOne(

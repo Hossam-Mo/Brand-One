@@ -1,10 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 import "./App.css";
 import LandingPage from "./Componant/LandingPage";
 import ProductPage from "./Componant/ProductPage";
 import StorePage from "./Componant/StorePage";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  useParams,
+} from "react-router-dom";
 
 function App() {
   return (
