@@ -24,12 +24,16 @@
   margin-left: 50px;
   cursor: pointer;
   text-decoration: none;
+  transition: all 0.4s ease-in-out;
 }
 .nav_logo > span:nth-child(2) {
   color: #e1bf35;
   margin-left: 10px;
   text-shadow: 2px 2px 0px #232323, 3px 2px 0px #e1bf35;
   margin-right: 3px;
+}
+.logo_scrollColor {
+  color: #2b2b2b;
 }
 .nav_right {
   width: 35%;

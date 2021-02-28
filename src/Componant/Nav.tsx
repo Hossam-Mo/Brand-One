@@ -10,11 +10,13 @@ interface sections {
 interface props {
   border: boolean;
   scroll: boolean;
+  logoScroll: boolean;
 }
 
-export default function Nav({ border, scroll }: props) {
+export default function Nav({ border, scroll, logoScroll }: props) {
   const [selecter, setSelecter] = useState<string>("");
   const [navColor, setNavColor] = useState<boolean>(false);
+  const [logoColor, setLogoColor] = useState(false);
 
   const man: sections[] = [
     { name: "Shirts", id: 1 },
@@ -29,6 +31,20 @@ export default function Nav({ border, scroll }: props) {
     { name: "Jackets", id: 3 },
     { name: "Booots", id: 4 },
   ];
+
+  useEffect(() => {
+    if (logoScroll) {
+      const logoScrolls = () => {
+        if (window.scrollY > 91.4 / 2) {
+          setLogoColor(true);
+        } else setLogoColor(false);
+      };
+      window.addEventListener("scroll", logoScrolls);
+      return () => {
+        if (window) window.removeEventListener("scroll", logoScrolls);
+      };
+    }
+  }, []);
 
   useEffect(() => {
     if (scroll) {
@@ -53,7 +69,7 @@ export default function Nav({ border, scroll }: props) {
         !border ? "nav" : `nav nav_border ${navColor && "nav_scrollColor"} `
       }
     >
-      <Link to="/" className="nav_logo">
+      <Link to="/" className={`nav_logo ${logoColor && "logo_scrollColor"}`}>
         <span>Brand</span>
         <span>O</span>
         <span>ne </span>

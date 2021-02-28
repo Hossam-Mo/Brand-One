@@ -91,7 +91,7 @@ export default function ProductPage() {
   }, [limit, imgName, product, productId]);
   return (
     <div className="product">
-      <Nav border={true} scroll={false}></Nav>
+      <Nav border={true} scroll={false} logoScroll={true}></Nav>
       <div className="product_left">
         <div className="left_contant">
           <h1>Manz Sport</h1>

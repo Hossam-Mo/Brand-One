@@ -146,6 +146,7 @@ html {
   flex-direction: column;
   align-items: center;
   width: 55%;
+  background-color: white;
 }
 .right_imgLinks {
   display: flex;
