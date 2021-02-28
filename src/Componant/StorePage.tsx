@@ -32,14 +32,20 @@ export default function StorePage() {
 
   useEffect(() => {
     console.log(type);
-  }, [type]);
+  }, [products]);
   useEffect(() => {
     axios
       .get("http://localhost:5000/")
       .then((r) => {
-        console.log(r.data);
         let newR = [];
-        for (let i = 0; i < r.data.length; i++) {
+        let ss = [];
+        ss = r.data.filter((it: any) => {
+          if (it.saction == section && it.type === type) {
+            return it;
+          }
+        });
+
+        for (let i = 0; i < ss.length; i++) {
           if (i === 4) {
             newR.push({
               _id: "",
@@ -52,12 +58,12 @@ export default function StorePage() {
               colors: [{ color: "", imgs: [{ img: "", _id: "" }] }],
               cal: true,
             });
-            newR.push(r.data[i]);
+            newR.push(ss[i]);
           } else {
-            newR.push(r.data[i]);
+            newR.push(ss[i]);
           }
         }
-        console.log(newR);
+
         setProducts(newR);
       })
       .catch((err) => {
